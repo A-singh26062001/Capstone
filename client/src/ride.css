@@ -1,0 +1,9 @@
+.thank-you-page {
+    min-height: 100vh;
+    background-image: url('./thapar.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

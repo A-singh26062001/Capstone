@@ -7,6 +7,8 @@ import LocationSelector from './LocationSelector';
 import './App.css';
 import './CosOuter.css'
 import CosCycleBooking from './CosCycleBooking';
+import BookingPage from './booking';
+import FinishRide from './finishride';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,8 @@ function App() {
         <Route path='/homeLogin' element={<HomeLogin />} />
         <Route path={`/Location`} element={<div className="app"><LocationSelector /></div>} />
         <Route path={`/CosCycleBooking`} element={<div className="cosOuter"><CosCycleBooking /></div>} />
+        <Route path="/booking/:cycleNumber" element={<BookingPage />} />
+        <Route path="/finishride/:timeTaken" element={<FinishRide />} />
       </Routes>
     </BrowserRouter>
   );

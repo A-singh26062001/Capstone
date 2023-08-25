@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './CycleBooking.css'; // Import your CSS file for styling
 import cos from './cos.jpg';
+import { Link } from 'react-router-dom';
+
 
 const CosCycleBooking = () => {
   // State to track the total available cycles and selected cycles
@@ -25,6 +27,7 @@ const CosCycleBooking = () => {
         <h2>Total Available Cycles: {totalCycles}</h2>
         <div className="cycle-grid">
           {Array.from({ length: 10 }, (_, index) => (
+            <Link to={`/booking/${index + 1}`} key={index}>
             <div
               key={index}
               className={`cycle ${selectedCycles.includes(index + 1) ? 'selected' : ''}`}
@@ -32,6 +35,9 @@ const CosCycleBooking = () => {
             >
               {index + 1}
             </div>
+          </Link>
+          
+            
           ))}
         </div>
       </div>
