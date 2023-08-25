@@ -1,0 +1,49 @@
+/* CycleBooking.css */
+
+.cycle-booking {
+    text-align: center;
+    padding: 20px;
+    color: #000; /* Text color is black */
+  }
+  
+  .background-image {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 200px; /* Adjust the height as needed */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cycle-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
+    gap: 50px;
+  }
+  
+  .cycle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px; /* Adjust the width as needed */
+    height: 60px; /* Adjust the height as needed */
+    background-color: #4caf50; /* Default color for available cycles */
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .cycle:hover {
+    background-color: #f44336; /* Color for selected cycles */
+  }
+  

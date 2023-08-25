@@ -10,7 +10,8 @@ import img6 from './img6.png';
 import img7 from './img7.png'; 
 import img8 from './img8.png'; 
 import img9 from './img9.jpg'; 
-
+import ira from './ira.png';
+import cherish from './cherish.png';
 function Home() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
@@ -28,10 +29,37 @@ function Home() {
         </div>
         <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li><a href="#" className="nav-link px-2 link-secondary">Home</a></li>
-          <li><a href="#" className="nav-link px-2">Features</a></li>
-          <li><a href="#" className="nav-link px-2">Pricing</a></li>
+          <li>
+  <a
+    href="#pricing" // Link to the element with the id "pricing"
+    className="nav-link px-2"
+    onClick={(e) => {
+      e.preventDefault(); // Prevent the default behavior of the link
+      const pricingElement = document.getElementById('pricing'); // Get the element by id
+      if (pricingElement) {
+        pricingElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the element smoothly
+      }
+    }}
+  >
+    Pricing
+  </a>
+</li>
           <li><a href="#" className="nav-link px-2">FAQs</a></li>
-          <li><a href="#" className="nav-link px-2">About</a></li>
+          <li>
+    <a
+      href="#about" // Link to the element with the id "about"
+      className="nav-link px-2"
+      onClick={(e) => {
+        e.preventDefault(); // Prevent the default behavior of the link
+        const aboutElement = document.getElementById('about'); // Get the element by id
+        if (aboutElement) {
+          aboutElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the element smoothly
+        }
+      }}
+    >
+      About
+    </a>
+  </li>
         </ul>
 
         <div className="col-md-3 text-end">
@@ -138,16 +166,44 @@ function Home() {
           <div className="col-10 col-sm-8 col-lg-6">
             <img src={img9} className="d-block mx-lg-auto img-fluid py-5" alt="Bootstrap Themes" width="300" height="400" loading="lazy" />
           </div>
-          <div className="col-lg-6">
+
+          <footer id="pricing" className="col-lg-6">
             <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3">Pricing Strategy</h1>
             <p className="lead py-7">The price for renting the bicycle will be Rs. 1 per minute. Once the cycle is unlocked, the timer will automatically start. Every hour, <b>60 Rs.</b> will be deducted from the renter's bank account, and the timer will reset to zero. When the renter returns the bicycle to the assigned stand and locks it, the timer will stop, and the rental fee will be charged based on the duration of the rental.</p>
-            {/* <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-              <button type="button" className="btn btn-outline-secondary btn-lg px-4">Default</button>
-            </div> */}
-          </div>
+          </footer>
         </div>
       </div>
+      <div className="container" id="about">
+  <h2 className="pb-2 border-bottom fw-bold">About Us</h2>
+  <p className="my-4">We are students of Thapar University, passionate about sustainable transportation solutions. Our mission is to provide a convenient and eco-friendly bicycle rental service to our campus community.</p>
+  <div className="row row-cols-1 row-cols-md-4 g-4">
+    {/* Circular Images */}
+    <div className="col">
+      <div className="rounded-circle bg-primary text-center py-4">
+        <img src={cherish} alt="Team Member" className="img-fluid rounded-circle" />
+      </div>
+      <p className="text-center fw-bold mt-3">Cherish Mahajan</p>
+    </div>
+    <div className="col">
+      <div className="rounded-circle bg-primary text-center py-4">
+        <img src={img2} alt="Team Member" className="img-fluid rounded-circle" />
+      </div>
+      <p className="text-center fw-bold mt-3">Jashanveer Kaur Dhillon</p>
+    </div>
+    <div className="col">
+      <div className="rounded-circle bg-primary text-center py-4">
+        <img src={ira} alt="Team Member" className="img-fluid rounded-circle" />
+      </div>
+      <p className="text-center fw-bold mt-3">Ira Vashisht</p>
+    </div>
+    <div className="col">
+      <div className="rounded-circle bg-primary text-center py-4">
+        <img src={img5} alt="Team Member" className="img-fluid rounded-circle" />
+      </div>
+      <p className="text-center fw-bold mt-3">Amoldeep Singh</p>
+    </div>
+  </div>
+</div>
 
       <div className="container">
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -157,13 +213,13 @@ function Home() {
             <svg className="bi me-2" width="40" height="32"><use xlinkHref="#bootstrap"></use></svg>
           </a>
 
-          <ul className="nav col-md-4 justify-content-end">
+          {/* <ul className="nav col-md-4 justify-content-end">
             <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Home</a></li>
             <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Features</a></li>
             <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">Pricing</a></li>
             <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">FAQs</a></li>
             <li className="nav-item"><a href="#" className="nav-link px-2 text-body-secondary">About</a></li>
-          </ul>
+          </ul> */}
         </footer>
       </div>
     </>

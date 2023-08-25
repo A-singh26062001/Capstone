@@ -1,0 +1,14 @@
+/* App.css */
+
+.app {
+    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('map.png'); /* Set the background image */
+    background-size: cover; /* Make the background image cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center; /* Center the background image */
+    color: #fff; /* Set text color to white for better visibility */
+  }
+  
