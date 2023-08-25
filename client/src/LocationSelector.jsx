@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './LocationSelector.css'; // Import your CSS file for styling
-import thapar from'./thapar.png';
+import thapar from './thapar.png';
+import CosCycleBooking from './CosCycleBooking'; // Make sure to import the CosCycleBooking component
+import { Link } from 'react-router-dom'; // Import the Link component for navigation
+
 const LocationSelector = () => {
   const [selectedLocation, setSelectedLocation] = useState(''); // State to store the selected location
 
@@ -23,11 +26,16 @@ const LocationSelector = () => {
           onChange={handleLocationChange}
         >
           <option value="">Select</option>
-          <option value="COS">COS</option>
+          <option value="HostelM">Hostel M</option>
           <option value="TAN">TAN</option>
           <option value="Main Gate">Main Gate</option>
         </select>
       </div>
+
+      {/* Conditionally render a Link component */}
+      {selectedLocation === 'HostelM' && (
+        <Link to="/CosCycleBooking">Book a ride from Hostel M</Link>
+      )}
     </div>
   );
 };

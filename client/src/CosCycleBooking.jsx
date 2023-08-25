@@ -10,22 +10,18 @@ const CosCycleBooking = () => {
   // Function to handle cycle selection
   const handleCycleSelection = (cycleNumber) => {
     if (selectedCycles.includes(cycleNumber)) {
-      // If the cycle is already selected, deselect it
-      setSelectedCycles(selectedCycles.filter((cycle) => cycle !== cycleNumber));
-      setTotalCycles(totalCycles + 1);
-    } else {
-      // If the cycle is not selected, select it
-      setSelectedCycles([...selectedCycles, cycleNumber]);
-      setTotalCycles(totalCycles - 1);
+      // If the cycle is already selected, do nothing
+      return;
     }
+
+    // If the cycle is not selected, select it
+    setSelectedCycles([...selectedCycles, cycleNumber]);
+    setTotalCycles(totalCycles - 1);
   };
 
   return (
     <div className="cycle-booking">
-      <div
-        className="background-image"
-      
-      >
+      <div className="background-image">
         <h2>Total Available Cycles: {totalCycles}</h2>
         <div className="cycle-grid">
           {Array.from({ length: 10 }, (_, index) => (

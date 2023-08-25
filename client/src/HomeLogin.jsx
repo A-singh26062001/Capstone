@@ -11,6 +11,9 @@ import img8 from './img8.png';
 import img9 from './img9.jpg'; 
 import ira from './ira.png'
 import cherish from './cherish.png';
+import jashan from './jashan.png'
+import amol from './amol.png';
+
 function HomeLogin() {
   const [showLogout, setShowLogout] = useState(false);
   const [showBookARide, setBookARide] = useState(false);
@@ -178,7 +181,7 @@ function HomeLogin() {
     </div>
     <div className="col">
       <div className="rounded-circle bg-primary text-center py-4">
-        <img src={img2} alt="Team Member" className="img-fluid rounded-circle" />
+        <img src={jashan} alt="Team Member" className="img-fluid rounded-circle" />
       </div>
       <p className="text-center fw-bold mt-3">Jashanveer Kaur Dhillon</p>
     </div>
@@ -190,7 +193,7 @@ function HomeLogin() {
     </div>
     <div className="col">
       <div className="rounded-circle bg-primary text-center py-4">
-        <img src={img5} alt="Team Member" className="img-fluid rounded-circle" />
+        <img src={amol} alt="Team Member" className="img-fluid rounded-circle" />
       </div>
       <p className="text-center fw-bold mt-3">Amoldeep Singh</p>
     </div>
