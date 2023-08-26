@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams  } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 import Login from './Login'; 
 import Signup from './Signup'; 
 import img1 from './img1.jpg';
@@ -15,8 +16,28 @@ import cherish from './cherish.png';
 import jashan from './jashan.png'
 import amol from './amol.png';
 function Home() {
+  const { from_email } = useParams();
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
+  const [showBookARide, setBookARide] = useState(false);
+  const [userQuestion, setUserQuestion] = useState('');
+
+
+  const sendQuestionToEmail = () => {
+    if (userQuestion) {
+      emailjs.send('service_0xrebzm', 'DEFAULT', {
+        question: userQuestion,
+        to_email: 'iravashisht2002@gmail.com',
+        from_email: from_email,
+      })
+      .then(function(response) {
+        console.log('Email sent successfully:', response);
+      })
+      .catch(function(error) {
+        console.error('Email sending failed:', error);
+      });
+    }
+  };
 
   return (
     <>
@@ -46,7 +67,21 @@ function Home() {
     Pricing
   </a>
 </li>
-          <li><a href="#" className="nav-link px-2">FAQs</a></li>
+<li>
+  <a
+    href="#faq" // Link to the element with the id "pricing"
+    className="nav-link px-2"
+    onClick={(e) => {
+      e.preventDefault(); // Prevent the default behavior of the link
+      const faqElement = document.getElementById('faq'); // Get the element by id
+      if (faqElement) {
+        faqElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the element smoothly
+      }
+    }}
+  >
+    FAQs
+  </a>
+</li>
           <li>
     <a
       href="#about" // Link to the element with the id "about"
@@ -206,7 +241,32 @@ function Home() {
     </div>
   </div>
 </div>
-
+<div className="container" id="faq">
+  <h2 className="pb-2 border-bottom fw-bold">FAQs</h2>
+  <div className="row my-4">
+    <div className="col-md-6">
+        <form>
+          <div className="mb-3">
+            <label htmlFor="question" className="form-label">Ask a Question</label>
+            <textarea
+              className="form-control"
+              id="question"
+              rows="3"
+              value={userQuestion} // Bind the textarea value to the userQuestion state
+              onChange={(e) => setUserQuestion(e.target.value)}  // Add an onChange event handler
+            ></textarea>
+          </div>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={sendQuestionToEmail} // Call handleSendButtonClick on button click
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+    </div>
       <div className="container">
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
           <p className="col-md-4 mb-0 text-body-secondary">© 2023 Company, Inc</p>

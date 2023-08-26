@@ -27,7 +27,7 @@ function Login() {
           // Generate a unique value (e.g., a timestamp)
         //   const uniqueValue = Date.now();
         //   navigate(`/homeLogin?token=${uniqueValue}`); // Navigate to homeLogin with the unique value as a query parameter
-        navigate(`/homeLogin`);    
+        navigate(`/homeLogin?email=${email}`);    
     }
       })
       .catch((err) => {

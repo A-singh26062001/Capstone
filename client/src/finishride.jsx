@@ -30,7 +30,7 @@ const FindRide = () => {
                         <p className="col-lg-8 mx-auto lead">
                             The amount of <strong>Rs. {timeDifference}</strong> is deducted from your account. We hope you had a great experience.
                         </p>
-                        <Link to="/home" className="btn btn-primary">Return to Home</Link>
+                        <Link to="/homelogin" className="btn btn-primary">Return to Home</Link>
                     </div>
                 </div>
             </div>
